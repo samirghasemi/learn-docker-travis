@@ -4,7 +4,7 @@ services:
   -docker
 
 before_install:
-  -docker build -t samirghasemi/learn-docker -f Dockerfile.dev .
+  -docker build -t samirghasemi/learn-docker-travis -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run -e CI=true samirghasemi/learn-docker-travis npm run test
